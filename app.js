@@ -39,7 +39,14 @@ function sortGrades(gradesArr) {}
  * @param {Array<Number>} gradesArr (Example: [0.76, 0.45])
  * @return {Array<Number>} (Example: [0.76, 0.77])
  */
-function showPassingGrades(gradesArr) {}
+function IsgreatThanFifty(grade) {
+  return grade > 0.5;
+}
+
+function showPassingGrades(gradesArr) {
+  var gradegreather = classGrades.filter(IsgreatThanFifty);
+  return gradegreather;
+}
 
 /**
  * Write a function that returns the average grade.
@@ -50,7 +57,14 @@ function showPassingGrades(gradesArr) {}
  * @param {Array<Number>} gradesArr (Example: [0.76, 0.45])
  * @return {Number}
  */
-function calculateAverage(gradesArr) {}
+function calculateAverage(gradesArr) {
+  // var Passing = classGrades.filter(IsMoreThanFifty)
+  let sum = 0;
+  for (let gradesArr of classGrades) sum += gradesArr;
+  //return sum ;
+  var average = sum / classGrades.length;
+  return average.toFixed(3);
+}
 
 /**
  * Write a function that returns the average PASSING grade.
@@ -61,8 +75,18 @@ function calculateAverage(gradesArr) {}
  * @param {Array<Number>} gradesArr (Example: [0.76, 0.45])
  * @return {Number}
  */
-function calculateAveragePassingGrade(gradesArr) {}
+function IsMoreThanFifty(grade) {
+  return grade > 0.5;
+}
 
+function calculateAveragePassingGrade(n) {
+  var Passing = classGrades.filter(IsMoreThanFifty);
+  let sum = 0;
+  for (let n of Passing) sum += n;
+  //return sum ;
+  var average = sum / Passing.length;
+  return average.toFixed(3);
+}
 /*
   DO NOT EDIT BELOW THIS LINE
   --------------------------- */
@@ -71,6 +95,7 @@ function calculateAveragePassingGrade(gradesArr) {}
  * The array below shows the grades of all 10 students in
  * ACME School of Code.
  */
+
 const classGrades = [0.76, 0.45, 0.77, 0.55, 0.52, 0.63, 0.48, 0.66, 0.44, 0.59];
 
 generateTable("Grades (x/100) in ACME School of Code", gradeOutOfHundred(classGrades));
