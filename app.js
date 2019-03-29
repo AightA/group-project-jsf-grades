@@ -39,7 +39,14 @@ function sortGrades(gradesArr) {}
  * @param {Array<Number>} gradesArr (Example: [0.76, 0.45])
  * @return {Array<Number>} (Example: [0.76, 0.77])
  */
-function showPassingGrades(gradesArr) {}
+function IsgreatThanFifty(grade) {
+  return grade > 0.5;
+}
+
+function showPassingGrades(gradesArr) {
+  var gradegreather = classGrades.filter(IsgreatThanFifty);
+  return gradegreather;
+}
 
 /**
  * Write a function that returns the average grade.
