@@ -16,7 +16,14 @@ const generateTable = require("./lib/tables");
  * @param {Array<number>} gradesArr (Example: [0.76, 0.45])
  * @return {Array<string>} (Example: ['76/100', '45/100'])
  */
-function gradeOutOfHundred(gradesArr) {}
+function gradeOutOfHundred(gradesArr) {
+  var gardestring = gradesArr.map(function(grade) {
+    var gd100 = parseInt(grade * 100);
+    return gd100.toString() + "/100";
+  });
+
+  return gardestring;
+}
 
 /**
  * Write a function that sorts grades from highest to lowest
@@ -28,7 +35,10 @@ function gradeOutOfHundred(gradesArr) {}
  * @param {Array<Number>} gradesArr (Example: [0.76, 0.45])
  * @return {Array<string>} (Example: ['76/100', '45/100'])
  */
-function sortGrades(gradesArr) {}
+function sortGrades(gradesArr) {
+  var font = gradesArr.sort().reverse();
+  return gradeOutOfHundred(font);
+}
 
 /**
  * Write a function that returns an array of grades that are
